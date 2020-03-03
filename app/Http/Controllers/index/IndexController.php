@@ -27,8 +27,17 @@ class IndexController extends Controller
         if(empty($password)){
             echo "请输入密码";die;
         }
-        $data = User::where($where)->find();
-        dd($data);
+        $data = User::where($where)->first();
+        $pwd = $data['password'];
+        if(empty($data)){
+            echo '请先注册';die;
+        }else if($pws == $password){
+            echo '登录成功';
+
+        }else{
+            echo '账号或密码有误';die;
+        }
+
     }
 
     //显示直播页面
