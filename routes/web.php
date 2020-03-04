@@ -19,3 +19,4 @@ Route::get('index/show','index\IndexController@show');
 Route::get('index/zhuce','index\IndexController@zhuce');
 Route::post('index/login','index\IndexController@login');
 Route::post('index/dozhuce','index\IndexController@dozhuce');
+Route::get('session','index\IndexController@session');
